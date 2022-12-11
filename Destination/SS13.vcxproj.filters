@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\Source\Internal\Engine.hpp" />
+    <ClInclude Include="..\Source\Internal\Engine\Assert.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Engine\Time.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Engine\Graphics\Atlas.hpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Engine\Graphics\Button.hpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Engine\Graphics\Sprite.hpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Engine\Input\Keyboard.hpp">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Engine\Input\Mouse.hpp">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Interface\Back.hpp">
+      <Filter>Game\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Interface\Belt.hpp">
+      <Filter>Game\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Interface\Hands.hpp">
+      <Filter>Game\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Interface\ID.hpp">
+      <Filter>Game\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Interface\SuitStorage.hpp">
+      <Filter>Game\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Interface\Toggle.hpp">
+      <Filter>Game\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Level.hpp">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Player.hpp">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Game\Interface.hpp">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Engine\Graphics.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Internal\Engine\Input.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Internal\Game.cpp" />
+    <ClCompile Include="..\Source\Internal\Engine\Assert.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Engine\Time.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Engine\Graphics\Atlas.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Engine\Graphics\Button.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Engine\Graphics\Sprite.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Engine\Input\Keyboard.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Engine\Input\Mouse.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Interface\Back.cpp">
+      <Filter>Game\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Interface\Belt.cpp">
+      <Filter>Game\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Interface\Hands.cpp">
+      <Filter>Game\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Interface\ID.cpp">
+      <Filter>Game\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Interface\SuitStorage.cpp">
+      <Filter>Game\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Interface\Toggle.cpp">
+      <Filter>Game\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Level.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Player.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Game\Interface.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Engine\Graphics.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Internal\Engine\Input.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{411fa24e-b314-41ee-89a1-5a6b79bc55cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Graphics">
+      <UniqueIdentifier>{f2068d80-f22c-46f1-9206-cac454671ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Input">
+      <UniqueIdentifier>{53852701-b4f9-4fa0-bbf5-069ad2402dc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{a85977cc-cbbe-4358-aeba-8c468171c719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Interface">
+      <UniqueIdentifier>{43537360-3454-4a67-9f31-3ed566bfe590}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
