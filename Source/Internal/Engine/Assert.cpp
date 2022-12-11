@@ -6,19 +6,19 @@
 
 namespace SS13::Engine
 {
-    Assert::Assert()
+    __Assert::__Assert()
     {
         std::system("ChCp 437");
         std::system("Cls");
     }
 
-    void Assert::operator()(const std::string& Title , const std::string& Message , bool Condition)
+    void __Assert::operator()(const std::string& Message , bool Condition)
     {
         if (Condition)
         {
-            if (SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR , Title.c_str() , Message.c_str() , nullptr) < 0)
+            if (SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR , "Assert!" , Message.c_str() , nullptr) < 0)
             {
-                std::cerr << Title << ": " << Message << "\n";
+                std::cerr << "Assert: " << Message << "\n";
                 std::system("Pause");
             }
             std::exit(-1);

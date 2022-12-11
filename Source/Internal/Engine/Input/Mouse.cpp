@@ -24,15 +24,19 @@ namespace SS13::Engine::Input
 
     signed int __Mouse::X()
     {
+        SDL_DisplayMode Mode;
+        SDL_GetWindowDisplayMode(_Graphics.Window , &Mode);
         signed int X;
         SDL_GetMouseState(&X , nullptr);
-        return _Graphics.LogicalX(X);
+        return static_cast<signed int>(std::round(static_cast<float>(X) * static_cast<float>(_Graphics.Width) / static_cast<float>(Mode.w)));
     }
 
     signed int __Mouse::Y()
     {
+        SDL_DisplayMode Mode;
+        SDL_GetWindowDisplayMode(_Graphics.Window , &Mode);
         signed int Y;
         SDL_GetMouseState(nullptr , &Y);
-        return _Graphics.LogicalY(Y);
+        return static_cast<signed int>(std::round(static_cast<float>(Y) * static_cast<float>(_Graphics.Height) / static_cast<float>(Mode.h)));
     }
 }

@@ -2,11 +2,11 @@
 
 namespace SS13::Engine
 {
-    inline class Assert
+    inline class __Assert
     {
         public:
-            Assert();
-            void operator()(const std::string& Title , const std::string& Message , bool Condition = true);
+            __Assert();
+            void operator()(const std::string& Message , bool Condition = true);
     }
     _Assert;
 }

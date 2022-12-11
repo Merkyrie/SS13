@@ -13,10 +13,6 @@ namespace SS13::Engine
         public:
             __Graphics();
             void Begin();
-            signed int LogicalX(signed int X);
-            signed int LogicalY(signed int Y);
-            signed int ActualX(signed int X);
-            signed int ActualY(signed int Y);
             void End();
             ~__Graphics();
     }

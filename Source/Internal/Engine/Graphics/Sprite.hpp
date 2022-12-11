@@ -31,8 +31,8 @@ namespace SS13::Engine::Graphics
             void InvertedRight(signed int Value);
             void InvertedDown(signed int Value);
         public:
-            void ScaledOffsetX(signed int Coefficient);
-            void ScaledOffsetY(signed int Coefficient);
+            void RelativeX(signed int Coefficient);
+            void RelativeY(signed int Coefficient);
         public:
             void Size(signed int Value);
             void Scale(float Coefficient);

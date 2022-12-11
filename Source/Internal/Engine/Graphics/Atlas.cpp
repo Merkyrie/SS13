@@ -9,6 +9,8 @@
 # include "Internal/Engine/Graphics/Sprite.hpp"
 # include "Internal/Engine/Graphics/Atlas.hpp"
 
+using namespace std::literals;
+
 namespace SS13::Engine::Graphics
 {
     __Atlas::__Atlas()
@@ -18,7 +20,11 @@ namespace SS13::Engine::Graphics
             if (Entry.path().extension() == ".png")
             {
                 Images.emplace_back(Entry.path().string() , IMG_LoadTexture(_Graphics.Renderer , Entry.path().string().c_str()));
-                _Assert("Atlas" , "Failed to load sprite <" + Entry.path().string() + ">!" , Images.back().Texture == nullptr);
+                _Assert
+                (
+                    "Failed to load sprite: \""s + Entry.path().string() + "\"!" + "\n" ,
+                    Images.back().Texture == nullptr
+                );
             }
         }
     }
@@ -32,7 +38,10 @@ namespace SS13::Engine::Graphics
                 return Image.Texture;
             }
         }
-        _Assert("Atlas" , "Failed to find sprite <" + Path + ">!");
+        _Assert
+        (
+            "Failed to find sprite: \""s + Path + "\"!" + "\n"
+        );
         return nullptr;
     }
 }

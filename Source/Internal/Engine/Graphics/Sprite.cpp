@@ -8,6 +8,8 @@
 # include "Internal/Engine/Graphics/Atlas.hpp"
 # include "Internal/Engine/Graphics/Sprite.hpp"
 
+using namespace std::literals;
+
 namespace SS13::Engine::Graphics
 {
     _Sprite::_Sprite(const std::string& Path)
@@ -16,12 +18,11 @@ namespace SS13::Engine::Graphics
         vTexture = _Atlas[vPath];
         _Assert
         (
-            "Sprite" ,
-            std::string{} +
+            "Class: _Sprite"s + "\n" +
             "Method: _Sprite(const std::string& Path)" + "\n" +
             "Path: " + vPath + "\n" +
-            "Assert: SDL_QueryTexture(Texture , nullptr , nullptr , &Width , &Height) < 0" + "\n" +
-            "SDL: " + SDL_GetError() + "\n" ,
+            "Message: failed to query sprite's width and height!" + "\n" +
+            SDL_GetError() + "\n" ,
             SDL_QueryTexture(vTexture , nullptr , nullptr , &vWidth , &vHeight) < 0
         );
     }
@@ -86,12 +87,12 @@ namespace SS13::Engine::Graphics
         vY = _Graphics.Height - (Value - vHeight);
     }
 
-    void _Sprite::ScaledOffsetX(signed int Coefficient)
+    void _Sprite::RelativeX(signed int Coefficient)
     {
         vX += static_cast<signed int>(std::round(vScale * static_cast<float>(Coefficient)));
     }
 
-    void _Sprite::ScaledOffsetY(signed int Coefficient)
+    void _Sprite::RelativeY(signed int Coefficient)
     {
         vY += static_cast<signed int>(std::round(vScale * static_cast<float>(Coefficient)));
     }
@@ -100,11 +101,10 @@ namespace SS13::Engine::Graphics
     {
         _Assert
         (
-            "Sprite" ,
-            std::string{} +
-            "Method: SetSize(signed int Size)" + "\n" +
+            "Class: _Sprite"s + "\n" +
+            "Method: Size(signed int Value)" + "\n" +
             "Path: " + vPath + "\n" +
-            "Assert: Width != Height" + "\n" ,
+            "Message: unable to use this method if sprite's width is not equal to it's height!" + "\n" ,
             vWidth != vHeight
         );
         vWidth = Value;
@@ -120,12 +120,14 @@ namespace SS13::Engine::Graphics
 
     void _Sprite::Draw()
     {
+        SDL_DisplayMode Mode;
+        SDL_GetWindowDisplayMode(_Graphics.Window , &Mode);
         SDL_Rect Rectangle
         {
-            .x{_Graphics.ActualX(vX)} ,
-            .y{_Graphics.ActualY(vY)} ,
-            .w{_Graphics.ActualX(vWidth)} ,
-            .h{_Graphics.ActualY(vHeight)} ,
+            .x{static_cast<signed int>(std::round(static_cast<float>(vX) * static_cast<float>(Mode.w) / static_cast<float>(_Graphics.Width)))} ,
+            .y{static_cast<signed int>(std::round(static_cast<float>(vY) * static_cast<float>(Mode.h) / static_cast<float>(_Graphics.Height)))} ,
+            .w{static_cast<signed int>(std::round(static_cast<float>(vWidth) * static_cast<float>(Mode.w) / static_cast<float>(_Graphics.Width)))} ,
+            .h{static_cast<signed int>(std::round(static_cast<float>(vHeight) * static_cast<float>(Mode.h) / static_cast<float>(_Graphics.Height)))} ,
         };
         SDL_RenderCopy(_Graphics.Renderer , vTexture , nullptr , &Rectangle);
     }

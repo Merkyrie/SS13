@@ -15,32 +15,32 @@ namespace SS13::Game::Interface
         Equip.Scale(Scale);
         Equip.Left(Frame.Left());
         Equip.Up(Frame.Up());
-        Equip.ScaledOffsetX(2);
-        Equip.ScaledOffsetY(2);
+        Equip.RelativeX(2);
+        Equip.RelativeY(2);
 
         Swap.Scale(Scale);
         Swap.Left(Frame.Left());
         Swap.Up(Frame.Up());
-        Swap.ScaledOffsetX(14);
-        Swap.ScaledOffsetY(2);
+        Swap.RelativeX(14);
+        Swap.RelativeY(2);
 
         RightHand.Scale(Scale);
         RightHand.Left(Frame.Left());
         RightHand.Up(Frame.Up());
-        RightHand.ScaledOffsetX(2);
-        RightHand.ScaledOffsetY(12);
+        RightHand.RelativeX(2);
+        RightHand.RelativeY(12);
 
         LeftHand.Scale(Scale);
         LeftHand.Left(Frame.Left());
         LeftHand.Up(Frame.Up());
-        LeftHand.ScaledOffsetX(34);
-        LeftHand.ScaledOffsetY(12);
+        LeftHand.RelativeX(34);
+        LeftHand.RelativeY(12);
 
         Selection.Scale(Scale);
         Selection.Left(Frame.Left());
         Selection.Up(Frame.Up());
-        Selection.ScaledOffsetX(0);
-        Selection.ScaledOffsetY(10);
+        Selection.RelativeX(0);
+        Selection.RelativeY(10);
     }
     
     void __Hands::operator()()
@@ -50,10 +50,10 @@ namespace SS13::Game::Interface
             switch (Right)
             {
                 case true:
-                    Selection.ScaledOffsetX(32);
+                    Selection.RelativeX(32);
                 break;
                 case false:
-                    Selection.ScaledOffsetX(-32);
+                    Selection.RelativeX(-32);
                 break;
             }
             Right = !Right;
